@@ -1,0 +1,605 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description" content="Muzamil Writer - Urdu poetry, English poetry and novels.">
+
+    <title>Muzamil Writer | Poetry & Novels</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Noto+Nastaliq+Urdu:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">Muzamil <span>Writer</span></div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#poetry">Poetry</a>
+        <a href="#novels">Novels</a>
+        <a href="#about">About</a>
+    </nav>
+
+    <a href="#poetry" class="header-btn">Start Reading</a>
+
+</header>
+
+<main>
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="eyebrow">WELCOME TO MY WORLD</p>
+
+            <h1>
+                Words That Touch<br>
+                <span>The Heart</span>
+            </h1>
+
+            <p class="hero-description">
+                A beautiful collection of poetry, emotions and stories.
+                Discover the magic of words with Muzamil Writer.
+            </p>
+
+            <a href="#poetry" class="main-btn">Explore Poetry</a>
+
+        </div>
+
+        <div class="hero-decoration">“</div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="categories">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">EXPLORE THE WORDS</p>
+
+            <h2>Poetry Categories</h2>
+
+        </div>
+
+        <div class="category-grid">
+
+            <a href="#poetry" class="category-card" data-category="Love">
+                <span>♡</span>
+                <h3>Love Poetry</h3>
+                <p>Words of love and affection</p>
+            </a>
+
+            <a href="#poetry" class="category-card" data-category="Sad">
+                <span>☾</span>
+                <h3>Sad Poetry</h3>
+                <p>Feelings hidden in the heart</p>
+            </a>
+
+            <a href="#poetry" class="category-card" data-category="Urdu">
+                <span>ا</span>
+                <h3>Urdu Poetry</h3>
+                <p>Beautiful Urdu words</p>
+            </a>
+
+            <a href="#poetry" class="category-card" data-category="English">
+                <span>✦</span>
+                <h3>English Poetry</h3>
+                <p>Feelings in English words</p>
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- POETRY SECTION -->
+
+    <section class="poetry-section" id="poetry">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">A COLLECTION OF EMOTIONS</p>
+
+            <h2>Latest Poetry</h2>
+
+            <p>Read and feel every word.</p>
+
+        </div>
+
+        <div class="search-box">
+
+            <input
+                type="search"
+                id="searchInput"
+                placeholder="Search poetry..."
+            >
+
+            <button type="button" id="searchButton">
+                Search
+            </button>
+
+        </div>
+
+        <div class="filter-buttons">
+
+            <button class="filter-btn active" data-filter="All">All</button>
+
+            <button class="filter-btn" data-filter="Love">Love</button>
+
+            <button class="filter-btn" data-filter="Sad">Sad</button>
+
+            <button class="filter-btn" data-filter="Urdu">Urdu</button>
+
+            <button class="filter-btn" data-filter="English">English</button>
+
+        </div>
+
+        <p id="loadingMessage" class="empty-message">
+            Loading poetry...
+        </p>
+
+        <div class="poetry-grid" id="poetryGrid"></div>
+
+        <p class="empty-message" id="emptyMessage" hidden>
+            No poetry found.
+        </p>
+
+    </section>
+
+
+    <!-- NOVELS SECTION -->
+
+    <section class="novels-section" id="novels">
+
+        <div class="section-heading">
+
+            <p class="eyebrow">STORIES THAT LIVE FOREVER</p>
+
+            <h2>My Novels</h2>
+
+            <p>Discover stories, characters and emotions.</p>
+
+        </div>
+
+        <div class="novel-grid">
+
+            <div class="novel-card">
+
+                <div class="novel-cover">01</div>
+
+                <div>
+                    <h3>Coming Soon</h3>
+                    <p>New stories will be published here.</p>
+                    <span class="novel-status">Coming Soon</span>
+                </div>
+
+            </div>
+
+            <div class="novel-card">
+
+                <div class="novel-cover">02</div>
+
+                <div>
+                    <h3>My Next Novel</h3>
+                    <p>A new journey of words and emotions.</p>
+                    <span class="novel-status">Coming Soon</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+    <!-- ABOUT SECTION -->
+
+   <!-- ABOUT SECTION -->
+
+<section class="about-section" id="about">
+
+    <p class="eyebrow">ABOUT THE AUTHOR</p>
+
+    <div class="author-photo">
+        <img src="images/muzamil.png" alt="Muzamil Writer">
+    </div>
+
+    <h2>Muzamil Writer</h2>
+
+    <p>
+        Welcome to my world of words. This website is a place
+        where poetry, stories and emotions come together.
+        Read, explore and enjoy my writing.
+    </p>
+
+</section>
+    </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-logo">
+        Muzamil <span>Writer</span>
+    </div>
+
+    <p>A world of words, poetry and stories.</p>
+
+    <p class="copyright">
+        © <span id="currentYear"></span>
+        Muzamil Writer. All Rights Reserved.
+    </p>
+
+</footer>
+
+
+<!-- FIREBASE -->
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/13.4.0/firebase-app.js";
+
+import {
+    getFirestore,
+    collection,
+    getDocs,
+    query,
+    where
+} from "https://www.gstatic.com/firebasejs/13.4.0/firebase-firestore.js";
+
+
+/* FIREBASE CONFIGURATION */
+
+const firebaseConfig = {
+
+    apiKey: "AIzaSyCjNYTmTIexh4IB6e-paJzanPxo2Xr_KYE",
+
+    authDomain: "mubeen-writer-e6676.firebaseapp.com",
+
+    projectId: "mubeen-writer-e6676",
+
+    storageBucket: "mubeen-writer-e6676.firebasestorage.app",
+
+    messagingSenderId: "314969263716",
+
+    appId: "1:314969263716:web:7fdab51c0bebe4cc009971"
+
+};
+
+
+/* INITIALIZE FIREBASE */
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+
+/* HTML ELEMENTS */
+
+const poetryGrid = document.getElementById("poetryGrid");
+
+const loadingMessage = document.getElementById("loadingMessage");
+
+const emptyMessage = document.getElementById("emptyMessage");
+
+const searchInput = document.getElementById("searchInput");
+
+
+/* VARIABLES */
+
+let allPoetry = [];
+
+let selectedCategory = "All";
+
+
+/* CURRENT YEAR */
+
+document.getElementById("currentYear").textContent =
+    new Date().getFullYear();
+
+
+/* LOAD PUBLISHED POETRY */
+
+async function loadPoetry() {
+
+    loadingMessage.hidden = false;
+
+    loadingMessage.textContent = "Loading poetry...";
+
+    poetryGrid.replaceChildren();
+
+    try {
+
+        // Only load published poems from Firebase
+
+        const poemsQuery = query(
+
+            collection(db, "poems"),
+
+            where("published", "==", true)
+
+        );
+
+
+        const snapshot = await getDocs(poemsQuery);
+
+
+        allPoetry = [];
+
+
+        snapshot.forEach((document) => {
+
+            const poem = document.data();
+
+            allPoetry.push({
+
+                id: document.id,
+
+                ...poem
+
+            });
+
+        });
+
+
+        // Sort latest poetry first
+
+        allPoetry.sort((a, b) => {
+
+            const dateA = a.createdAt?.toMillis?.() || 0;
+
+            const dateB = b.createdAt?.toMillis?.() || 0;
+
+            return dateB - dateA;
+
+        });
+
+
+        loadingMessage.hidden = true;
+
+        displayPoetry();
+
+
+        console.log("Published poetry loaded:", allPoetry.length);
+
+        console.log("Poetry data:", allPoetry);
+
+
+    } catch (error) {
+
+        loadingMessage.hidden = false;
+
+        loadingMessage.textContent =
+            "Unable to load poetry. Please check Firebase connection and database rules.";
+
+        console.error("Firebase error:", error);
+
+    }
+
+}
+
+
+/* DISPLAY POETRY */
+
+function displayPoetry() {
+
+    poetryGrid.replaceChildren();
+
+
+    const searchText = searchInput.value.toLowerCase().trim();
+
+
+    const filteredPoetry = allPoetry.filter((poem) => {
+
+
+        const categoryMatch =
+
+            selectedCategory === "All" ||
+
+            poem.category === selectedCategory;
+
+
+        const searchMatch =
+
+            (poem.title || "").toLowerCase().includes(searchText) ||
+
+            (poem.content || "").toLowerCase().includes(searchText);
+
+
+        return categoryMatch && searchMatch;
+
+    });
+
+
+    emptyMessage.hidden = filteredPoetry.length !== 0;
+
+
+    filteredPoetry.forEach((poem) => {
+
+
+        const card = document.createElement("article");
+
+        card.className = "poetry-card";
+
+
+        // CATEGORY
+
+        const category = document.createElement("span");
+
+        category.className = "card-category";
+
+        category.textContent =
+            (poem.category || "Poetry") + " POETRY";
+
+
+        // TITLE
+
+        const title = document.createElement("h3");
+
+        title.textContent = poem.title || "Untitled";
+
+
+        // CONTENT
+
+        const content = document.createElement("p");
+
+
+        if (poem.category === "Urdu") {
+
+            content.className = "urdu-text";
+
+            content.dir = "rtl";
+
+        } else {
+
+            content.className = "english-text";
+
+        }
+
+
+        content.style.whiteSpace = "pre-wrap";
+
+        content.textContent = poem.content || "";
+
+
+        // AUTHOR
+
+const author = document.createElement("span");
+
+author.className = "author";
+
+author.textContent = "By Muzamil";
+
+
+        // ADD TO CARD
+
+        card.append(
+
+            category,
+
+            title,
+
+            content,
+
+            author
+
+        );
+
+
+        poetryGrid.appendChild(card);
+
+
+    });
+
+}
+
+
+/* SEARCH BUTTON */
+
+document.getElementById("searchButton").addEventListener(
+
+    "click",
+
+    displayPoetry
+
+);
+
+
+/* LIVE SEARCH */
+
+searchInput.addEventListener(
+
+    "input",
+
+    displayPoetry
+
+);
+
+
+/* FILTER BUTTONS */
+
+document.querySelectorAll(".filter-btn").forEach((button) => {
+
+
+    button.addEventListener("click", () => {
+
+
+        selectedCategory = button.dataset.filter;
+
+
+        document.querySelectorAll(".filter-btn").forEach((btn) => {
+
+            btn.classList.remove("active");
+
+        });
+
+
+        button.classList.add("active");
+
+
+        displayPoetry();
+
+
+    });
+
+});
+
+
+/* CATEGORY CARDS */
+
+document.querySelectorAll(".category-card").forEach((card) => {
+
+
+    card.addEventListener("click", () => {
+
+
+        selectedCategory = card.dataset.category;
+
+
+        document.querySelectorAll(".filter-btn").forEach((button) => {
+
+            button.classList.toggle(
+
+                "active",
+
+                button.dataset.filter === selectedCategory
+
+            );
+
+        });
+
+
+        displayPoetry();
+
+
+    });
+
+});
+
+
+/* START WEBSITE */
+
+loadPoetry();
+
+
+</script>
+
+</body>
+</html>
